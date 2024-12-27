@@ -6,15 +6,15 @@ This is a proof-of-concept for building an offline maps app with Tauri and mapli
 
 This is meant to prove the workflow for building something like Organic Maps:
 
-- [] A user can download maps via:
-  - [] A static list
-  - [] Scrolling on the map on some zoom levels will expose download links for viewable regions
+- [ ] A user can download maps via:
+  - [ ] A static list
+  - [ ] Scrolling on the map on some zoom levels will expose download links for viewable regions
 - [x] Downloaded maps are displayed offline
 
 Stretch Goals
 
-- [] An initial map of world coasts is included
-- [] Report download progress
+- [ ] An initial map of world coasts is included
+- [ ] Report download progress
 
 ## Technologies
 
