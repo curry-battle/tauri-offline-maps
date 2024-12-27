@@ -11,7 +11,9 @@ import { appDataDir, join } from 'npm:@tauri-apps/api/path'
 
 export async function downloadAndSavePMTiles(url: string, filename: string) {
   try {
-    const fileExists = await exists(filename, { dir: BaseDirectory.AppData })
+    const fileExists = await exists(filename, {
+      baseDir: BaseDirectory.AppData,
+    })
 
     if (fileExists) {
       console.log(`File ${filename} already exists, returning path`)

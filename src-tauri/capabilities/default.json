@@ -13,7 +13,7 @@
       "identifier": "fs:allow-write-file",
       "allow": [
         {
-          "path": "$DATA/**/*"
+          "path": "$APPDATA/**/*"
         }
       ]
     },
@@ -26,10 +26,10 @@
           "path": "**"
         },
         {
-          "path": "$DATA/**/*"
+          "path": "$APPDATA/**/*"
         },
         {
-          "path": "$DATA/**/.*"
+          "path": "$APPDATA/**/.*"
         }
       ]
     },
