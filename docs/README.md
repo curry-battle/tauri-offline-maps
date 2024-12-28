@@ -1,10 +1,10 @@
-# Scripts
+# Docs
 
-Scripts used for the tilemaking process
+This dir holds some auxillary information and scripts for the project.
 
 ## geofabrik
 
-Basically, we need scripts to organize the different downloadable regions, and also to find the urls for us to download. This doesn't include region naming/localization, so maybe need to figure that out later.
+Basically, to fully realize a project like this, we will need scripts to organize the different downloadable regions, and also to find the urls for us to download. This doesn't include region naming/localization, so maybe need to figure that out later.
 
 The files we need are:
 
@@ -18,8 +18,3 @@ We want tilemaker to create tiles that are compatible with our protomaps styles.
 ```
 tilemaker monaco-latest.osm.pbf monaco.pmtiles
 ```
-
-We need a config/script combination for generating:
-
-1. A worldmap of coastlines
-2. Detailed downloadable maps

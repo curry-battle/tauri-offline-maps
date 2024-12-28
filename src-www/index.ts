@@ -1,13 +1,15 @@
 import maplibregl from 'npm:maplibre-gl'
 import { PMTiles, Protocol } from 'npm:pmtiles'
 import { invoke } from 'npm:@tauri-apps/api@^2.0.1/core'
+
+import { downloadAndSavePMTiles, getFileLoc } from './fs.ts'
 import layers from './layers.ts'
-import { downloadAndSavePMTiles } from './fs.ts'
+import worldLayers from './world_layers.ts'
 
 const map = new maplibregl.Map({
   container: 'map',
   center: [7.42661, 43.73488],
-  zoom: 13,
+  zoom: 2,
   pitchWithRotate: false,
   style: {
     version: 8,
@@ -20,63 +22,57 @@ const map = new maplibregl.Map({
 const protocol = new Protocol()
 maplibregl.addProtocol('pmtiles', protocol.tile)
 
+// Download and add Basemap
 map.on('load', async function () {
-  // This will be pattern to use for loading coast data
-  // once we figure out how to make a good global tile
   const url = await downloadAndSavePMTiles(
-    'https://static.bpev.me/maps/monaco.pmtiles',
-    'preview.pmtiles',
+    'https://static.bpev.me/maps/world.pmtiles',
+    'world.pmtiles',
   )
-
-  map.addSource('preview', {
+  map.addSource('world', {
     type: 'vector',
     url: `pmtiles://${url}`,
+    attribution: "Natural Earth"
   })
-  map.addLayer({
-    'id': 'preview',
-    'type': 'line',
-    'source': 'preview',
-    'source-layer': 'transportation',
-    'minzoom': 13,
-    'filter': [
-      'all',
-      ['==', '$type', 'LineString'],
-      ['in', 'class', 'minor', 'service'],
-    ],
-    'layout': { 'line-cap': 'round', 'line-join': 'round' },
-    'paint': {
-      'line-color': 'black',
-      'line-width': { 'base': 1.55, 'stops': [[4, 0.25], [20, 30]] },
-    },
-  })
+  worldLayers.forEach(layer => map.addLayer(layer))
 })
 
-let monacoLoaded = false
+const loaded = {}
 
-async function downloadAndAddMonaco() {
-  if (monacoLoaded) return
+// Download and load regional maps
+async function downloadAndAdd(name: string, loc) {
+  if (loaded[name]) {
+    map.flyTo(loc)
+    return
+  }
   try {
     const url = await downloadAndSavePMTiles(
-      'https://static.bpev.me/maps/monaco.pmtiles',
-      'monaco.pmtiles',
+      `https://static.bpev.me/maps/${name}.pmtiles`,
+      `${name}.pmtiles`,
     )
+    map.addSource(name, { type: 'vector', url: `pmtiles://${url}` })
+    layers(name).forEach((layer) => map.addLayer(layer))
 
-    map.addSource('monaco', {
-      type: 'vector',
-      url: `pmtiles://${url}`,
-    })
-
-    // Add Monaco layers on top of the coastline
-    layers('monaco').forEach((layer) => {
-      map.addLayer(layer)
-    })
-
-    monacoLoaded = true
+    loaded[name] = true
+    map.flyTo(loc)
   } catch (error) {
-    console.error('Failed to download or add Monaco region:', error)
+    console.error(`Failed to download or add ${name} region:`, error)
   }
 }
 
+getFileLoc().then((val) => {
+  document.getElementById('loc').innerHTML = val
+})
+
 document
-  .getElementById('download')
-  .addEventListener('click', downloadAndAddMonaco)
+  .getElementById('download-monaco')
+  .addEventListener('click', () => downloadAndAdd('monaco', {
+    center: [7.42661, 43.73488],
+    zoom: 12
+  }))
+
+document
+  .getElementById('download-taiwan')
+  .addEventListener('click', () => downloadAndAdd('taiwan', {
+    center: [121.5987, 25.0047],
+    zoom: 9
+  }))

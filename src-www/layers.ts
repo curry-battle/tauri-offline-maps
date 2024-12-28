@@ -4,12 +4,7 @@
 export default function (sourceName) {
   return [
     {
-      'id': 'background',
-      'type': 'background',
-      'paint': { 'background-color': 'hsl(47, 26%, 88%)' },
-    },
-    {
-      'id': 'landuse-residential',
+      'id': `${sourceName}-landuse-residential`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landuse',
@@ -22,7 +17,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(47, 13%, 86%)', 'fill-opacity': 0.7 },
     },
     {
-      'id': 'landcover_grass',
+      'id': `${sourceName}-landcover_grass`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landcover',
@@ -30,7 +25,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(82, 46%, 72%)', 'fill-opacity': 0.45 },
     },
     {
-      'id': 'landcover_wood',
+      'id': `${sourceName}-landcover_wood`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landcover',
@@ -41,7 +36,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'water',
+      'id': `${sourceName}-water`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'water',
@@ -55,7 +50,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(205, 56%, 73%)' },
     },
     {
-      'id': 'water_intermittent',
+      'id': `${sourceName}-water_intermittent`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'water',
@@ -64,7 +59,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(205, 56%, 73%)', 'fill-opacity': 0.7 },
     },
     {
-      'id': 'landcover-ice-shelf',
+      'id': `${sourceName}-landcover-ice-shelf`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landcover',
@@ -73,7 +68,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(47, 26%, 88%)', 'fill-opacity': 0.8 },
     },
     {
-      'id': 'landcover-glacier',
+      'id': `${sourceName}-landcover-glacier`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landcover',
@@ -85,7 +80,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'landcover_sand',
+      'id': `${sourceName}-landcover_sand`,
       'type': 'fill',
       'metadata': {},
       'source': sourceName,
@@ -98,7 +93,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'landuse',
+      'id': `${sourceName}-landuse`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landuse',
@@ -107,7 +102,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': '#eae0d0' },
     },
     {
-      'id': 'landuse_overlay_national_park',
+      'id': `${sourceName}-landuse_overlay_national_park`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'landcover',
@@ -118,7 +113,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'waterway-tunnel',
+      'id': `${sourceName}-waterway-tunnel`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'waterway',
@@ -137,7 +132,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'waterway',
+      'id': `${sourceName}-waterway`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'waterway',
@@ -155,7 +150,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'waterway_intermittent',
+      'id': `${sourceName}-waterway_intermittent`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'waterway',
@@ -174,7 +169,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'tunnel_railway_transit',
+      'id': `${sourceName}-tunnel_railway_transit`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -193,7 +188,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'building',
+      'id': `${sourceName}-building`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'building',
@@ -210,7 +205,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'housenumber',
+      'id': `${sourceName}-housenumber`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'housenumber',
@@ -224,7 +219,7 @@ export default function (sourceName) {
       'paint': { 'text-color': 'rgba(212, 177, 146, 1)' },
     },
     {
-      'id': 'road_area_pier',
+      'id': `${sourceName}-road_area_pier`,
       'type': 'fill',
       'metadata': {},
       'source': sourceName,
@@ -234,7 +229,7 @@ export default function (sourceName) {
       'paint': { 'fill-antialias': true, 'fill-color': 'hsl(47, 26%, 88%)' },
     },
     {
-      'id': 'road_pier',
+      'id': `${sourceName}-road_pier`,
       'type': 'line',
       'metadata': {},
       'source': sourceName,
@@ -247,7 +242,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_bridge_area',
+      'id': `${sourceName}-road_bridge_area`,
       'type': 'fill',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -260,7 +255,7 @@ export default function (sourceName) {
       'paint': { 'fill-color': 'hsl(47, 26%, 88%)', 'fill-opacity': 0.5 },
     },
     {
-      'id': 'road_path',
+      'id': `${sourceName}-road_path`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -277,7 +272,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_minor',
+      'id': `${sourceName}-road_minor`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -294,7 +289,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'tunnel_minor',
+      'id': `${sourceName}-tunnel_minor`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -312,7 +307,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'tunnel_major',
+      'id': `${sourceName}-tunnel_major`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -330,7 +325,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'aeroway-area',
+      'id': `${sourceName}-aeroway-area`,
       'type': 'fill',
       'metadata': { 'mapbox:group': '1444849345966.4436' },
       'source': sourceName,
@@ -348,7 +343,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'aeroway-taxiway',
+      'id': `${sourceName}-aeroway-taxiway`,
       'type': 'line',
       'metadata': { 'mapbox:group': '1444849345966.4436' },
       'source': sourceName,
@@ -371,7 +366,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'aeroway-runway',
+      'id': `${sourceName}-aeroway-runway`,
       'type': 'line',
       'metadata': { 'mapbox:group': '1444849345966.4436' },
       'source': sourceName,
@@ -394,7 +389,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_trunk_primary',
+      'id': `${sourceName}-road_trunk_primary`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -410,7 +405,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_secondary_tertiary',
+      'id': `${sourceName}-road_secondary_tertiary`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -426,7 +421,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_major_motorway',
+      'id': `${sourceName}-road_major_motorway`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -443,7 +438,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'railway-transit',
+      'id': `${sourceName}-railway-transit`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -459,7 +454,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'railway',
+      'id': `${sourceName}-railway`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -471,7 +466,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'waterway-bridge-case',
+      'id': `${sourceName}-waterway-bridge-case`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'waterway',
@@ -488,7 +483,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'waterway-bridge',
+      'id': `${sourceName}-waterway-bridge`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'waterway',
@@ -504,7 +499,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'bridge_minor case',
+      'id': `${sourceName}-bridge_minor case`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -522,7 +517,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'bridge_major case',
+      'id': `${sourceName}-bridge_major case`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -540,7 +535,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'bridge_minor',
+      'id': `${sourceName}-bridge_minor`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -557,7 +552,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'bridge_major',
+      'id': `${sourceName}-bridge_major`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'transportation',
@@ -574,7 +569,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'admin_sub',
+      'id': `${sourceName}-admin_sub`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'boundary',
@@ -586,7 +581,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'admin_country_z0-4',
+      'id': `${sourceName}-admin_country_z0-4`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'boundary',
@@ -609,7 +604,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'admin_country_z5-',
+      'id': `${sourceName}-admin_country_z5-`,
       'type': 'line',
       'source': sourceName,
       'source-layer': 'boundary',
@@ -630,7 +625,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'poi_label',
+      'id': `${sourceName}-poi_label`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'poi',
@@ -654,7 +649,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'airport-label',
+      'id': `${sourceName}-airport-label`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'aerodrome_label',
@@ -678,7 +673,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'road_major_label',
+      'id': `${sourceName}-road_major_label`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'transportation_name',
@@ -701,7 +696,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'place_label_other',
+      'id': `${sourceName}-place_label_other`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'place',
@@ -727,7 +722,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'place_label_city',
+      'id': `${sourceName}-place_label_city`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'place',
@@ -747,7 +742,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'country_label-other',
+      'id': `${sourceName}-country_label-other`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'place',
@@ -773,7 +768,7 @@ export default function (sourceName) {
       },
     },
     {
-      'id': 'country_label',
+      'id': `${sourceName}-country_label`,
       'type': 'symbol',
       'source': sourceName,
       'source-layer': 'place',

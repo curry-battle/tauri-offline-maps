@@ -29,10 +29,7 @@
   "tasks": {
     "setup": "deno cache build.ts --allow-scripts=npm:esbuild",
     "check": "deno fmt && deno check ./src-www/index.ts && deno lint",
-    "build": "cargo tauri android build --debug && deno task open",
-    "build:macos": "cargo tauri build",
-    "dev": "cargo tauri dev",
-    "start": "cargo tauri android dev",
-    "open": "open 'src-tauri/gen/android/app/build/outputs/apk/universal/debug'"
+    "build": "cargo tauri build",
+    "dev": "cargo tauri dev"
   }
 }

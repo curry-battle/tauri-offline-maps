@@ -4,10 +4,13 @@ import {
   mkdir,
   writeFile,
 } from 'npm:@tauri-apps/plugin-fs@^2.0.0'
-import { platform } from 'npm:@tauri-apps/plugin-os@^2.0.0'
 import { fetch } from 'npm:@tauri-apps/plugin-http@^2.0.0'
 import { convertFileSrc } from 'npm:@tauri-apps/api/core'
 import { appDataDir, join } from 'npm:@tauri-apps/api/path'
+
+export async function getFileLoc() {
+  return await appDataDir()
+}
 
 export async function downloadAndSavePMTiles(url: string, filename: string) {
   try {
