@@ -6,7 +6,7 @@
   "build": {
     "beforeDevCommand": "deno run -A build.ts dev",
     "beforeBuildCommand": "deno run -A build.ts build",
-    "devUrl": "http://0.0.0.0:3000",
+    "devUrl": "http://localhost:3000",
     "frontendDist": "../src-www"
   },
   "app": {

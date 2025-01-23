@@ -14,11 +14,11 @@ export async function getFileLoc() {
 
 export async function downloadAndSavePMTiles(url: string, filename: string) {
   try {
-    const fileExists = await exists(filename, {
-      baseDir: BaseDirectory.AppData,
-    })
+    const baseDir = BaseDirectory.AppData
+    const rootExists = await exists('', { baseDir })
+    if (!rootExists) mkdir('', { baseDir })
 
-    if (fileExists) {
+    if (await exists(filename, { baseDir })) {
       console.log(`File ${filename} already exists, returning path`)
       const assetPath = await join(await appDataDir(), filename)
       return convertFileSrc(assetPath)
