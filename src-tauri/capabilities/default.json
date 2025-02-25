@@ -43,6 +43,6 @@
         {"url": "https://bpev.me" }
       ]
     },
-    "upload:default"
+    "upload:allow-download"
   ]
 }
