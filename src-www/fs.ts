@@ -47,8 +47,6 @@ export async function downloadAndSavePMTiles(url: string, filename: string) {
       console.error(e);
     });
 
-    await new Promise(resolve => setTimeout(resolve, 5000));
-  
     console.log(`Successfully saved ${filename}`)
 
     return convertFileSrc(assetPath)
